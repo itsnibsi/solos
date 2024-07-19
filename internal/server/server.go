@@ -7,6 +7,7 @@ import (
 	"github.com/gofiber/fiber/v3"
 	"github.com/itsnibsi/solos/internal/api/handlers"
 	"github.com/itsnibsi/solos/internal/config"
+	"github.com/itsnibsi/solos/internal/errors"
 )
 
 type Server struct {
@@ -15,9 +16,13 @@ type Server struct {
 }
 
 func New(cfg *config.Config) *Server {
+	app := fiber.New(fiber.Config{
+		ErrorHandler: errors.ErrorHandler,
+	})
+
 	return &Server{
 		config: cfg,
-		app:    fiber.New(),
+		app:    app,
 	}
 }
 
