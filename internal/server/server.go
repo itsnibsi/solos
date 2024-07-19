@@ -33,7 +33,7 @@ func (s *Server) SetupRoutes() {
 func (s *Server) Start() error {
 	s.SetupRoutes()
 
-	addr := fmt.Sprintf("%s:%d", s.config.Bind, s.config.Port)
+	addr := fmt.Sprintf("%s:%d", s.config.Host, s.config.Port)
 	log.Printf("Starting server on %s", addr)
 	return s.app.Listen(addr)
 }
