@@ -1,7 +1,7 @@
 {
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": "always"
   },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -13,12 +13,13 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "go.lintTool": "golangci-lint",
-  "go.formatTool": "goimports",
+  "go.lintOnSave": "workspace",
+  "go.formatTool": "gofmt",
   "go.useLanguageServer": true,
   "[go]": {
     "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
-      "source.organizeImports": true
+      "source.organizeImports": "always"
     }
   },
   "files.associations": {
