@@ -8,7 +8,11 @@ import (
 )
 
 func main() {
-	cfg := config.Load()
+	cfg, err := config.Load()
+	if err != nil {
+		log.Fatalf("Error loading config: %v", err)
+	}
+
 	srv := server.New(cfg)
 
 	if err := srv.Start(); err != nil {
