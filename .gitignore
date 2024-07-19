@@ -14,12 +14,11 @@
 # Dependency directories (remove the comment below to include it)
 # vendor/
 
+# Env file
+.env
+
 # Go workspace file
 go.work
-
-# IDE-specific files
-.idea/
-.vscode/
 
 # OS-specific files
 .DS_Store

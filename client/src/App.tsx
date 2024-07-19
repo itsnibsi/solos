@@ -7,8 +7,8 @@ function App() {
 
   useEffect(() => {
     fetch(`${API_URL}/health`)
-      .then(response => response.json())
-      .then(data => setHealth(data.status))
+      .then((response) => response.json())
+      .then((data) => setHealth(data.status))
       .catch(() => setHealth('Error'))
   }, [])
 

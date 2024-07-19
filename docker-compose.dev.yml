@@ -11,6 +11,7 @@ services:
     volumes:
       - .:/app
       - backend_tmp:/app/tmp
+    command: sh -c "go mod download && golangci-lint run ./... && air -c .air.toml"
 
   frontend:
     build:
@@ -23,7 +24,7 @@ services:
       - /app/node_modules
     environment:
       - NODE_ENV=development
-    command: npm run dev -- --host 0.0.0.0
+    command: sh -c "npm install && npm run lint && npm run dev -- --host 0.0.0.0"
     depends_on:
       - backend
 
